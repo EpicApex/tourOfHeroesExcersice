@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component , Input } from "@angular/core"
 import { Hero }       from './hero'
 
 @Component({
@@ -14,13 +14,11 @@ import { Hero }       from './hero'
                   <div> Nemesis   -  {{hero.nemesis}} </div>   
                 </div>
               </div>
-    
     `
-
 })
 
 export class HeroDetailComponent {
    
-  hero: Hero;
+  @Input() hero: Hero;
 
 }

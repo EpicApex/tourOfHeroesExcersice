@@ -1,16 +1,23 @@
-import { BrowserModule}   from '@angular/platform-browser';
-import { NgModule     }   from '@angular/core';
-import { FormsModule  }   from '@angular/forms';
+//Not a module error
+import { NgModule     }         from '@angular/core';
+//Angular related components that can be declared under NgModule-declarations
+import { BrowserModule}         from '@angular/platform-browser';
+import { FormsModule  }         from '@angular/forms';
 
-import { AppComponent }   from './app.component';
+//AppComponent related components
+import { AppComponent }         from './app.component';
+import { HeroDetailComponent }  from './hero-detail.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroDetailComponent
+    //NgModule -here- => Not a module error
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
