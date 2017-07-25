@@ -6,7 +6,7 @@ import { FormsModule  }         from '@angular/forms';
 
 //AppComponent related components
 import { AppComponent }         from './app.component';
-import { HeroDetailComponent }  from './hero-detail.component'
+import { HeroDetailComponent }  from './hero-detail.component';
 
 @NgModule({
   declarations: [
