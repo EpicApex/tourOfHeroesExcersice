@@ -1,6 +1,6 @@
-import { Component }    from '@angular/core';
-import { Hero }         from './hero';
-import { HeroService }  from './hero.service';
+import { Component , OnInit}    from '@angular/core';
+import { Hero }                 from './hero';
+import { HeroService }          from './hero.service';
 
 
 
@@ -76,17 +76,29 @@ import { HeroService }  from './hero.service';
                       height: 100%; 
                      }
 
-                `]
-                  
+                `],
+                  providers: [HeroService]
               })
 
 
 
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title  = 'Activision - Blizzard - Overwatch playground';
   heroes: Hero[];
   selectedHero: Hero;
+
+  constructor(private heroService: HeroService) { }
+
+    getHeroesSlowly(): void {
+      this.heroService.getHeroes().then(heroes=> this.heroes = heroes);
+    }
+    
+    ngOnInit(): void {
+      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+      //Add 'implements OnInit' to the class.
+      this.getHeroesSlowly();
+    }
 
     onSelect(hero: Hero): void {
       this.selectedHero = hero;
